@@ -4,7 +4,15 @@
     include './template/header.php';
 ?>
 
-<h1>Hello World!</h1>
+<form method="post">
+    <div class="center">
+        Nome: <input type="text" name="nome" />
+        Valor: <input type="text" name="valor" />
+        Quantidade: <input type="text" name="qtd" />
+        Data de Validade: <input type="text" name="dtval" />
+        <input type="submit" value="Cadastrar" />
+    </div>
+</form>
 
 <?php
     include './template/footer.php';
