@@ -15,11 +15,14 @@ function salvar() {
         $valor = $_POST['valor'];
         $qtd = $_POST['qtd'];
         
-        $SQL = "";
+        $dtval = (isset($_POST['dtval']) ? $_POST['dtval'] : "");
+        
+        $SQL = "INSERT INTO produto (nome,valor,quantidade,data_de_validade) values (:nome, :valor, :qtd, :dtval);";
         $preparo = conexao()->prepare($SQL);
-        //$preparo->bindValue("", $nome);
-        //$preparo->bindValue("", $valor);
-        //$preparo->bindValue("", $qtd);
+        $preparo->bindValue("nome", $nome);
+        $preparo->bindValue("valor", $valor);
+        $preparo->bindValue("qtd", $qtd);
+        $preparo->bindValue("dtval", $dtval);
         $preparo->execute();
         if($preparo->rowCount() == 1){
             echo "Sucesso!";
