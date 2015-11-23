@@ -31,3 +31,19 @@ function salvar() {
         }
     }
 }
+
+function listar(){
+    $SQL = "SELECT * FROM produto WHERE 1;";
+    $preparo = conexao()->prepare($SQL);
+    $preparo->execute();
+    while ($linha = $preparo->fetch(PDO::FETCH_ASSOC)) {
+        echo "<tr>";
+        echo "<td><a href='?excluir=".$linha['idProduto']."'>Excluir</a></td>";
+        echo "<td>".$linha['idProduto']."</td>";
+        echo "<td>".$linha['nome']."</td>";
+        echo "<td>".$linha['valor']."</td>";
+        echo "<td>".$linha['quantidade']."</td>";
+        echo "<td>".$linha['data_de_validade']."</td>";
+        echo "</tr>";
+    }
+}
