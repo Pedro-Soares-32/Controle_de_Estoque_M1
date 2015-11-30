@@ -39,6 +39,7 @@ function listar(){
     while ($linha = $preparo->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
         echo "<td><a href='?excluir=".$linha['idProduto']."'>Excluir</a></td>";
+        echo "<td><a href='?editar=".$linha['idProduto']."'>Editar</a></td>";
         echo "<td>".$linha['idProduto']."</td>";
         echo "<td>".$linha['nome']."</td>";
         echo "<td>".$linha['valor']."</td>";
