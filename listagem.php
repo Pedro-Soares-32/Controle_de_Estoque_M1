@@ -3,6 +3,7 @@
     include './includes/Estoque.php';
     $title = "Controle de Estoque";
     include './template/header.php';
+    excluir_por_id();
 ?>
 
 <div class="center">

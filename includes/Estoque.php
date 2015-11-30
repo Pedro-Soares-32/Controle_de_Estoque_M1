@@ -47,3 +47,18 @@ function listar(){
         echo "</tr>";
     }
 }
+
+function excluir_por_id() {
+    if(isset($_GET['excluir'])){
+        $id = $_GET['excluir'];
+        $SQL = "DELETE FROM `produto` WHERE idProduto=:idProduto;";
+        $prepare = conexao()->prepare($SQL);
+        $prepare->bindValue(":idProduto", $id);
+        $prepare->execute();
+        if($prepare->rowCount() == 1){
+            echo 'Sucesso!';
+        }else{
+            echo 'Deu merda!';
+        }
+    }
+}
