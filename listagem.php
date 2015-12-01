@@ -4,11 +4,14 @@
     $title = "Controle de Estoque";
     include './template/header.php';
     excluir_por_id();
+    editar_por_id();
+    editar();
 ?>
 
 <div class="center">
     <table style="width: 100%;">
         <tr style="background: #CCC;">
+            <th></th>
             <th></th>
             <th>Id</th>
             <th>Nome</th>
